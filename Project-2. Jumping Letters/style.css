@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(to right, #04d3f7, #f03efa);
+}
+
+.letters {
+    perspective: 100px;
+    font-family: cursive;
+    color: ghostwhite;
+}
+
+.letters span {
+    cursor: pointer;
+    font-size: 10rem;
+    display: inline-block;
+    user-select: none;
+    line-height: 0.8;
+}
+
+.letters span.active {
+    animation: jump 2s ease-in-out;
+    transform-origin: bottom left;
+}
+
+@keyframes jump {
+    0% {
+        transform: translate(0, 0) rotate(180deg);
+    }
+
+    25% {
+        transform: scale(2) translate(0, -150px);
+    }
+
+    75% {
+        transform: scale(1.1, 1.1) translate(0, 200px);
+    }
+
+    100% {
+        transform: translate(0, 0) translate(360deg);
+    }
+}
